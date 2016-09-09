@@ -13,5 +13,9 @@ Ext.define('Movierent.Application', {
 
     stores: [
         // TODO: add stores here
-    ]
+    ],
+
+    launch: function() {
+        console.log('launch');
+    }
 });

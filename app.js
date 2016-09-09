@@ -9,9 +9,5 @@ Ext.application({
 
     extend: 'Movierent.Application',
     
-    //autoCreateViewport: true,
-
-    launch: function() {
-    	console.log('launch');
-    }
+    autoCreateViewport: false,
 });
