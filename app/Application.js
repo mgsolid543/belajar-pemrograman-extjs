@@ -15,6 +15,10 @@ Ext.define('Movierent.Application', {
         // TODO: add stores here
     ],
 
+    init: function () {
+        splashscreen = Ext.getBody().mask('Sedang memuat aplikasi...', 'splashscreen');
+    },
+    
     launch: function() {
         console.log('launch');
     }
