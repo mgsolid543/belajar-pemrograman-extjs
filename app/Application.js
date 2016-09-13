@@ -3,6 +3,10 @@ Ext.define('Movierent.Application', {
 
     extend: 'Ext.app.Application',
 
+    requires: [
+        // 'Movierent.view.Login'
+    ],
+
     views: [
         // TODO: add views here
     ],

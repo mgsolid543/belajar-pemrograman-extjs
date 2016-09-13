@@ -21,17 +21,29 @@ Ext.define('Movierent.view.Login', {
             defaults: {
                 xtype: 'textfield',
                 anchor: '100%',
-                labelWidth: 60
+                labelWidth: 60,
+                allowBlank: false,
+                vtype: 'alphanum',
+                minLength: 3,
+                msgTarget: 'under'
             },
             items: [
                 {
                     name: 'user',
-                    fieldLabel: "User"
+                    fieldLabel: "User",
+                    maxLength: 25,
+                    value: 'admin'
                 },
                 {
                     name: 'password',
                     inputType: 'password',
-                    fieldLabel: "Password"
+                    fieldLabel: "Password",
+                    enableKeyEvents: true,
+                    id: 'passsword',
+                    maxLength: 15,
+                    // vtype: 'customPass',
+                    value: '123456',
+                    msgTarget: 'side'
                 }
             ]
         }
