@@ -24,3 +24,9 @@
     margin-bottom: 15px;
     height: 100px;
 }
+
+
+/** Icons */
+.key {
+    background-image:url('../icons/key.png') !important;
+}
