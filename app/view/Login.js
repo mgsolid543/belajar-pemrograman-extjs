@@ -35,5 +35,30 @@ Ext.define('Movierent.view.Login', {
                 }
             ]
         }
+    ],
+
+    dockedItems: [
+        {
+            xtype: 'toolbar',
+            dock: 'bottom',
+            items: [
+                {
+                    xtype: 'tbfill',
+                },
+                {
+                    xtype: 'button',
+                    itemId: 'cancel',
+                    iconCls: 'cancel',
+                    text: "Batal"
+                },
+                {
+                    xtype: 'button',
+                    itemId: 'submit',
+                    formBind: true,
+                    iconCls: 'key-go',
+                    text: "Login"
+                }
+            ]
+        }
     ]
 });
