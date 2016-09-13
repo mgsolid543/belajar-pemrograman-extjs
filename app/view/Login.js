@@ -42,8 +42,9 @@ Ext.define('Movierent.view.Login', {
                     enableKeyEvents: true,
                     id: 'passsword',
                     maxLength: 15,
-                    // vtype: 'customPass',
-                    value: '123456'
+                    vtype: 'customPass',
+                    value: '123456',
+                    msgTarget: 'side'
                 }
             ]
         }

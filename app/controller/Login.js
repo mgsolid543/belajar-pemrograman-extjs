@@ -21,7 +21,7 @@ Ext.define('Movierent.controller.Login', {
                 return /^((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})/.test(val);
             },
             // vtype Text property: The error text to display when the validation function returns false
-            customPassText: 'Not a valid password.  Length must be at least 6 characters and maximum of 20Password must contain one digit, one letter lowercase, one letter uppercase, onse special symbol @#$% and between 6 and 20 characters.',
+            customPassText: 'Not a valid password.  Length must be at least 6 characters and maximum of 20 Password must contain one digit, one letter lowercase, one letter uppercase, onse special symbol @#$% and between 6 and 20 characters.',
         });
     },
 
@@ -32,7 +32,7 @@ Ext.define('Movierent.controller.Login', {
     onButtonClickCancel: function (button, e, options) {
         console.log('login cancel');
         // button.up('form').getForm().reset();
-        Ext.getCmp('formLogin').getForm().reset();
+        button.up('window').down('form').getForm().reset();
     }
 
 });
