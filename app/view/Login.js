@@ -16,6 +16,7 @@ Ext.define('Movierent.view.Login', {
     items: [
         {
             xtype: 'form',
+            id: "formLogin",
             frame: false,
             bodyPadding: 15,
             defaults: {
@@ -42,8 +43,7 @@ Ext.define('Movierent.view.Login', {
                     id: 'passsword',
                     maxLength: 15,
                     // vtype: 'customPass',
-                    value: '123456',
-                    msgTarget: 'side'
+                    value: '123456'
                 }
             ]
         }
