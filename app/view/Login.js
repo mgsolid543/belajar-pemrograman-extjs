@@ -42,7 +42,7 @@ Ext.define('Movierent.view.Login', {
                     enableKeyEvents: true,
                     id: 'passsword',
                     maxLength: 15,
-                    vtype: 'customPass',
+                    // vtype: 'customPass',
                     value: '123456',
                     msgTarget: 'side'
                 }
@@ -56,7 +56,7 @@ Ext.define('Movierent.view.Login', {
             dock: 'bottom',
             items: [
                 {
-                    xtype: 'tbfill',
+                    xtype: 'tbfill'
                 },
                 {
                     xtype: 'button',

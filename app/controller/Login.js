@@ -27,6 +27,17 @@ Ext.define('Movierent.controller.Login', {
 
     onButtonClickSubmit: function (button, e, options) {
         console.log('login submit');
+        var formPanel = button.up('window').down('form'),
+            login   = button.up('login'),
+            user    = formPanel.down('textfield[name=user]').getValue();
+            pass    = formPanel.down('textfield[name=password]').getValue();
+
+        if (formPanel.getForm().isValid()) {
+            pass = Movierent.util.MD5.encode(pass);
+            console.log('User: ' + user);
+            console.log('Pass: ' + pass);
+            Ext.get(login.getEl()).mask("Sedang proses otentikasi... Mohon tunggu...", 'loading');
+        }
     },
 
     onButtonClickCancel: function (button, e, options) {

@@ -6,7 +6,8 @@ Ext.define('Movierent.Application', {
     requires: [
         // 'Movierent.view.Login',
         'Ext.form.Panel',
-        'Ext.form.Label'
+        'Ext.form.Label',
+        'Movierent.util.MD5'
     ],
 
     views: [
