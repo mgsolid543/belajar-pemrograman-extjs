@@ -32,5 +32,4 @@
     }
     $mysqli->close();
     echo json_encode($result);
-
 ?>

@@ -7,7 +7,9 @@ Ext.define('Movierent.Application', {
         // 'Movierent.view.Login',
         'Ext.form.Panel',
         'Ext.form.Label',
-        'Movierent.util.MD5'
+        'Movierent.util.Util',
+        'Movierent.util.MD5',
+        'Movierent.util.Alert'
     ],
 
     views: [

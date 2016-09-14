@@ -37,6 +37,30 @@ Ext.define('Movierent.controller.Login', {
             console.log('User: ' + user);
             console.log('Pass: ' + pass);
             Ext.get(login.getEl()).mask("Sedang proses otentikasi... Mohon tunggu...", 'loading');
+
+            Ext.Ajax.request({
+                url: 'php/login.php',
+                params: {
+                    user: user,
+                    password: pass
+                },
+                success: function (conn, response, options, eOpts) {
+                    Ext.get(login.getEl().unmask());
+                    var result = Movierent.util.Util.decodeJSON(conn.responseText);
+                    if (result.success) {
+                        console.log('Login sukses');
+                        Movierent.util.Alert.msg('Sukses!', 'User berhasil login dan terotentikasi.');
+                        login.close();
+                    } else {
+                        console.log('Login gagal');
+                        Movierent.util.Util.showErrorMsg(conn.responseText);
+                    }
+                },
+                failure: function (conn, response, options, eOpts) {
+                    Ext.get(login.getEl().unmask());
+                    Movierent.util.Util.showErrorMsg(conn.responseText);
+                }
+            });
         }
     },
 
@@ -45,5 +69,4 @@ Ext.define('Movierent.controller.Login', {
         // button.up('form').getForm().reset();
         button.up('window').down('form').getForm().reset();
     }
-
 });
