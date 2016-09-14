@@ -54,6 +54,21 @@
     margin: 0;
 }
 
+/** Header */
+#titleHeader {
+    color:#000;
+    font-size:20px;
+    font-weight:bold;
+    font-family:'Lucida Grande', Arial, Sans;
+}
+
+.capslock{
+    background:url('../icons/flag_yellow.png') no-repeat center left;
+    padding:2px;
+    padding-left:20px;
+    font-weight:700
+}
+
 
 /** Icons */
 .key {

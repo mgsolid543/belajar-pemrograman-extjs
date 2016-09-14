@@ -1,8 +1,22 @@
 Ext.define('Movierent.controller.Login', {
     extend: 'Ext.app.Controller',
 
+    requires: [
+        'Movierent.util.MD5',
+        'Movierent.util.Alert',
+        'Movierent.util.Util'
+    ],
+
     views: [
-        'Login'
+        'Login',
+        'authentication.CapsLockTooltip'
+    ],
+
+    refs: [
+        {
+            ref: 'capslockTooltip',
+            selector: 'capslocktooltip'
+        }
     ],
 
     init: function (application) {
@@ -12,6 +26,12 @@ Ext.define('Movierent.controller.Login', {
             },
             "button#cancel": {
                 click: this.onButtonClickCancel
+            },
+            "textfield": {
+                specialkey: this.onTextfieldSpecialKey
+            },
+            "textfield[name=password]": {
+                keypress: this.onTextfieldKeyPress
             }
         });
 
@@ -68,5 +88,34 @@ Ext.define('Movierent.controller.Login', {
         console.log('login cancel');
         // button.up('form').getForm().reset();
         button.up('window').down('form').getForm().reset();
+    },
+
+    onTextfieldSpecialKey: function (field, e, options) {
+        if (e.getKey()==e.ENTER) {
+            var submitBtn = field.up('form').down('button#submit');
+            submitBtn.fireEvent('click', submitBtn, e, options);
+            console.log(submitBtn);
+        }
+    },
+
+    onTextfieldKeyPress: function (field, e, options) {
+        var charCode = e.getCharCode();
+
+        if ((e.shiftKey && charCode >= 97 && charCode <= 122) ||
+            (!e.shiftKey && charCode >= 65 && charCode <= 90)) {
+
+            if (this.getCapslockTooltip() === undefined) {
+                Ext.widget('capslocktooltip');
+            }
+
+            this.getCapslockTooltip().show();
+
+        } else {
+
+            if (this.getCapslockTooltip() !== undefined) {
+                this.getCapslockTooltip().hide();
+            }
+        }
     }
+
 });
