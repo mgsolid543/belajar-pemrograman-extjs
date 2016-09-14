@@ -53,12 +53,12 @@ Ext.define('Movierent.controller.Login', {
                         login.close();
                     } else {
                         console.log('Login gagal');
-                        Movierent.util.Util.showErrorMsg(conn.responseText);
+                        Movierent.util.Util.showErrorMsg(result.msg);
                     }
                 },
                 failure: function (conn, response, options, eOpts) {
                     Ext.get(login.getEl().unmask());
-                    Movierent.util.Util.showErrorMsg(conn.responseText);
+                    Movierent.util.Util.showErrorMsg(result.msg);
                 }
             });
         }
