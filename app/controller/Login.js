@@ -9,6 +9,7 @@ Ext.define('Movierent.controller.Login', {
 
     views: [
         'Login',
+        'Header',
         'authentication.CapsLockTooltip'
     ],
 
@@ -32,6 +33,9 @@ Ext.define('Movierent.controller.Login', {
             },
             "textfield[name=password]": {
                 keypress: this.onTextfieldKeyPress
+            },
+            "appheader button#logout": {
+                cllick: this.onButtonClickLogout
             }
         });
 
@@ -71,6 +75,8 @@ Ext.define('Movierent.controller.Login', {
                         console.log('Login sukses');
                         Movierent.util.Alert.msg('Sukses!', 'User berhasil login dan terotentikasi.');
                         login.close();
+                        Ext.create('Movierent.view.MyViewport');
+
                     } else {
                         console.log('Login gagal');
                         Movierent.util.Util.showErrorMsg(result.msg);
@@ -116,6 +122,32 @@ Ext.define('Movierent.controller.Login', {
                 this.getCapslockTooltip().hide();
             }
         }
+    },
+
+    onButtonClickLogout: function() {
+        Ext.Ajax.request({
+            url: 'php/logout.php',
+            
+            success: function (conn, response, options, eOpts) {
+                var result = Movierent.util.Util.decodeJSON(conn.responseText);
+
+                if (!result) {
+                    result = {};
+                    result.success = false;
+                    result.msg = conn.responseText;
+                }
+
+                if (result.success) {
+                    button.up('mainviewport').destroy();
+                    window.location.reload();
+                } else {
+                    Movierent.util.Util.showErrorMsg(result.msg);
+                }
+            },
+            failure: function (conn, response, options, eOpts) {
+                Movierent.util.Util.showErrorMsg(conn.responseText);
+            }
+        });
     }
 
 });
