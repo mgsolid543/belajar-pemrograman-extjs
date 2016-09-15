@@ -1,8 +1,9 @@
-Ext.define('Movierent.view.MyViewport',{
+Ext.define('Movierent.view.MyViewport', {
     extend: 'Ext.container.Viewport',
     alias: 'widget.mainviewport',
 
     requires: [
+        'Ext.layout.container.Border',
         'Movierent.view.Header'
     ],
 
@@ -12,21 +13,18 @@ Ext.define('Movierent.view.MyViewport',{
 
     items: [
         {
-            xtype:'container',
+            xtype: 'container',
             width: 185,
             collapsible: true,
             region: 'west',
             style: 'background-color: #8FB488;'
-        },
-        {
+        }, {
             xtype: 'appheader',
             region: 'north'
-        },
-        {
+        }, {
             xtype: 'container',
             region: 'center'
-        },
-        {
+        }, {
             xtype: 'container',
             region: 'south',
             height: 30,

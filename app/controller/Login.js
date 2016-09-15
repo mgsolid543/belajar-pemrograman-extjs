@@ -4,7 +4,8 @@ Ext.define('Movierent.controller.Login', {
     requires: [
         'Movierent.util.MD5',
         'Movierent.util.Alert',
-        'Movierent.util.Util'
+        'Movierent.util.Util',
+        'Movierent.view.MyViewport'
     ],
 
     views: [
@@ -35,7 +36,7 @@ Ext.define('Movierent.controller.Login', {
                 keypress: this.onTextfieldKeyPress
             },
             "appheader button#logout": {
-                cllick: this.onButtonClickLogout
+                click: this.onButtonClickLogout
             }
         });
 
@@ -124,7 +125,8 @@ Ext.define('Movierent.controller.Login', {
         }
     },
 
-    onButtonClickLogout: function() {
+    onButtonClickLogout: function(button, e, options) {
+        console.log('logout process');
         Ext.Ajax.request({
             url: 'php/logout.php',
             

@@ -9,7 +9,7 @@ Ext.define('Movierent.view.Header',{
     items: [
         {
             xtype: 'label',
-            html: '<div id="titleHeader">Movie Rent<span style="font-size: 12px;"> Ext Js</span></div>'
+            html: '<div id="titleHeader">Nga-Rental<span style="font-size: 12px;"> Ext Js</span></div>'
         },
         {
             xtype: 'tbfill'
