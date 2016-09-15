@@ -6,12 +6,7 @@ Ext.define('Movierent.Application', {
     requires: [
         'Ext.form.Panel',
         'Ext.form.Label',
-        'Movierent.util.Util',
-        'Ext.data.proxy.Ajax',
-        'Ext.form.FieldSet',
-        'Ext.form.Hidden',
-        'Ext.form.ComboBox',
-        'Ext.form.File'
+        'Movierent.util.Util'
     ],
 
     views: [

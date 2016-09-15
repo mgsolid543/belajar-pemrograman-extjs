@@ -5,6 +5,7 @@ Ext.define('Movierent.controller.Login', {
         'Movierent.util.MD5',
         'Movierent.util.Alert',
         'Movierent.util.Util',
+        'Movierent.util.SessionMonitor',
         'Movierent.view.MyViewport'
     ],
 
@@ -77,7 +78,7 @@ Ext.define('Movierent.controller.Login', {
                         Movierent.util.Alert.msg('Sukses!', 'User berhasil login dan terotentikasi.');
                         login.close();
                         Ext.create('Movierent.view.MyViewport');
-
+                        Movierent.util.SessionMonitor.start();
                     } else {
                         console.log('Login gagal');
                         Movierent.util.Util.showErrorMsg(result.msg);
