@@ -2,6 +2,10 @@ Ext.define('Movierent.view.Login', {
     extend: 'Ext.window.Window',
     alias: 'widget.login',
 
+    requires: [
+        'Movierent.view.Translation'
+    ],
+
     autoShow: true,
     height: 170,
     width: 360,
@@ -56,15 +60,15 @@ Ext.define('Movierent.view.Login', {
             dock: 'bottom',
             items: [
                 {
+                   xtype: 'translation'
+                }, {
                     xtype: 'tbfill'
-                },
-                {
+                }, {
                     xtype: 'button',
                     itemId: 'cancel',
                     iconCls: 'cancel',
                     text: "Batal"
-                },
-                {
+                }, {
                     xtype: 'button',
                     itemId: 'submit',
                     formBind: true,

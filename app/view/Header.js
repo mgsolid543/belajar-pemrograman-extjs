@@ -10,14 +10,13 @@ Ext.define('Movierent.view.Header',{
         {
             xtype: 'label',
             html: '<div id="titleHeader">Nga-Rental<span style="font-size: 12px;"> Ext Js</span></div>'
-        },
-        {
+        }, {
             xtype: 'tbfill'
-        },
-        {
+        }, {
+            xtype: 'translation'
+        }, {
             xtype: 'tbseparator'
-        },
-        {
+        }, {
             xtype: 'button',
             text: 'Logout',
             itemId: 'logout',

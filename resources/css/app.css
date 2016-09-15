@@ -70,6 +70,18 @@
 }
 
 
+/** Bendera */
+.id {
+    background-image:url('../flags/id.png') !important;
+    background-repeat: no-repeat;
+}
+
+.en {
+    background-image:url('../flags/us.png') !important;
+    background-repeat: no-repeat;
+}
+
+
 /** Icons */
 .key {
     background-image:url('../icons/key.png') !important;

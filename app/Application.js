@@ -6,7 +6,8 @@ Ext.define('Movierent.Application', {
     requires: [
         'Ext.form.Panel',
         'Ext.form.Label',
-        'Movierent.util.Util'
+        'Movierent.util.Util',
+        'Ext.menu.Menu'
     ],
 
     views: [
