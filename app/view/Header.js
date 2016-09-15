@@ -18,7 +18,7 @@ Ext.define('Movierent.view.Header',{
             xtype: 'tbseparator'
         }, {
             xtype: 'button',
-            text: 'Logout',
+            text: translations.logout,
             itemId: 'logout',
             iconCls: 'logout'
         }

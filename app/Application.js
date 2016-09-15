@@ -15,8 +15,8 @@ Ext.define('Movierent.Application', {
     ],
 
     controllers: [
-        // TODO: add controllers here
-        'Login'
+        'Login',
+        'TranslationManager'
     ],
 
     stores: [

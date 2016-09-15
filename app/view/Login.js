@@ -13,7 +13,7 @@ Ext.define('Movierent.view.Login', {
         type: 'fit'
     },
     iconCls: 'key',
-    title : 'Login',
+    title : translations.login,
     closeAction: 'hide',
     closable: false,
 
@@ -35,14 +35,14 @@ Ext.define('Movierent.view.Login', {
             items: [
                 {
                     name: 'user',
-                    fieldLabel: "User",
+                    fieldLabel: translations.user,
                     maxLength: 25,
                     value: 'admin'
                 },
                 {
                     name: 'password',
                     inputType: 'password',
-                    fieldLabel: "Password",
+                    fieldLabel: translations.password,
                     enableKeyEvents: true,
                     id: 'passsword',
                     maxLength: 15,
@@ -67,13 +67,13 @@ Ext.define('Movierent.view.Login', {
                     xtype: 'button',
                     itemId: 'cancel',
                     iconCls: 'cancel',
-                    text: "Batal"
+                    text: translations.cancel
                 }, {
                     xtype: 'button',
                     itemId: 'submit',
                     formBind: true,
                     iconCls: 'key-go',
-                    text: "Login"
+                    text: translations.submit
                 }
             ]
         }

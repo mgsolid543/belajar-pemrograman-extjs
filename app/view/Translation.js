@@ -11,7 +11,7 @@ Ext.define('Movierent.view.Translation',{
             }, {
                 xtype: 'menuitem',
                 iconCls: 'en',
-                text: 'Bhs. Inggris'
+                text: 'English'
             }
         ]
     })
