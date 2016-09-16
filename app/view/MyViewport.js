@@ -4,7 +4,9 @@ Ext.define('Movierent.view.MyViewport', {
 
     requires: [
         'Ext.layout.container.Border',
-        'Movierent.view.Header'
+        'Movierent.view.Header',
+        'Movierent.view.menu.Accordion',
+        'Movierent.view.MainPanel'
     ],
 
     layout: {

@@ -7,7 +7,8 @@ Ext.define('Movierent.Application', {
         'Ext.form.Panel',
         'Ext.form.Label',
         'Movierent.util.Util',
-        'Ext.menu.Menu'
+        'Ext.menu.Menu',
+        'Ext.layout.container.Accordion'
     ],
 
     views: [

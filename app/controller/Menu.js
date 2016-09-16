@@ -25,7 +25,7 @@ Ext.define('Movierent.controller.Menu', {
     init: function (application) {
         this.control({
             "mainmenu": {
-                render: thisn.onPanelRender
+                render: this.onPanelRender
             },
             "mainmenuitem": {
                 select: this.onTreepanelSelect,
@@ -70,10 +70,9 @@ Ext.define('Movierent.controller.Menu', {
             newTab = mainPanel.add({
                 xtype: record.raw.className,
                 closable: true,
-                iconCls: record.get('iconCls');
-            title: record.get('text');
-        })
-            ;
+                iconCls: record.get('iconCls'),
+                title: record.get('text')
+            });
         }
         mainPanel.setActiveTab(newTab);
     },

@@ -3,7 +3,7 @@
 
     session_start();
 
-    $username = $_SESSION[username];
+    $username = $_SESSION['username'];
 
     $queryString = "select p.menu_id menuId from user u ";
     $queryString .= "inner join permissions p on u.group_id = p.group_id ";
@@ -17,12 +17,13 @@
         while ($user = $resultdb->fetch_assoc()) {
             $in .= $user['menuId'] . ",";
         }
-        $in = substr($in, 0, -1);
+        $in = substr($in, 0, -1). ")";
 
         $resultdb->free();
 
         $sql = "select * from menu where parent_id is null ";
         $sql .= "and id in $in";
+
 
         if ($resultdb = $mysqli->query($sql)) {
             while ($r = $resultdb->fetch_assoc()) {
