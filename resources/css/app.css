@@ -98,3 +98,27 @@
 .logout {
     background-image:url('../icons/door_in.png') !important;
 }
+
+.sitemap {
+    background-image:url('../icons/sitemap_color.png') !important;
+}
+
+.home {
+    background-image:url('../icons/house.png') !important;
+}
+
+.menu_admin {
+    background-image:url('../icons/folder_user.png') !important;
+}
+
+.menu_groups {
+    background-image:url('../icons/group_key.png') !important;
+}
+
+.menu_profile {
+    background-image:url('../icons/user_edit.png') !important;
+}
+
+.menu_users {
+    background-image:url('../icons/group_edit.png') !important;
+}

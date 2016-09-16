@@ -13,16 +13,16 @@ Ext.define('Movierent.view.MyViewport', {
 
     items: [
         {
-            xtype: 'container',
+            xtype: 'mainmenu',
             width: 185,
             collapsible: true,
             region: 'west',
-            style: 'background-color: #8FB488;'
+            // style: 'background-color: #8FB488;'
         }, {
             xtype: 'appheader',
             region: 'north'
         }, {
-            xtype: 'container',
+            xtype: 'mainpanel',
             region: 'center'
         }, {
             xtype: 'container',
