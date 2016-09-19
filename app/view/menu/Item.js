@@ -1,6 +1,6 @@
 Ext.define('Movierent.view.menu.Item',{
     extend: 'Ext.tree.Panel',
-    alias: 'widger.mainmenuitem',
+    alias: 'widget.mainmenuitem',
 
     border: 0,
     autoscroll: true,

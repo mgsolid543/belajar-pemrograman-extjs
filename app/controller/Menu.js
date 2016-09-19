@@ -17,22 +17,10 @@ Ext.define('Movierent.controller.Menu', {
 
     refs: [
         {
-            ref: 'mainpanel',
+            ref: 'mainPanel',
             selector: 'mainpanel'
         }
     ],
-
-    init: function (application) {
-        this.control({
-            "mainmenu": {
-                render: this.onPanelRender
-            },
-            "mainmenuitem": {
-                select: this.onTreepanelSelect,
-                itemclick: this.onTreepanelItemclick
-            }
-        });
-    },
 
     onPanelRender: function (abstractcomponent, options) {
         this.getMenuStore().load(function (records, op, success) {
@@ -79,5 +67,17 @@ Ext.define('Movierent.controller.Menu', {
 
     onTreepanelItemclick: function (view, record, item, index, event, options) {
         this.onTreepanelSelect(view, record, index, options);
+    },
+
+    init: function (application) {
+        this.control({
+            "mainmenu": {
+                render: this.onPanelRender
+            },
+            "mainmenuitem": {
+                select: this.onTreepanelSelect,
+                itemclick: this.onTreepanelItemclick
+            }
+        });
     }
 });
