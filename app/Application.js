@@ -8,7 +8,8 @@ Ext.define('Movierent.Application', {
         'Ext.form.Label',
         'Movierent.util.Util',
         'Ext.menu.Menu',
-        'Ext.layout.container.Accordion'
+        'Ext.layout.container.Accordion',
+        'Movierent.store.security.Users'
     ],
 
     views: [
@@ -18,7 +19,8 @@ Ext.define('Movierent.Application', {
     controllers: [
         'Login',
         'TranslationManager',
-        'Menu'
+        'Menu',
+        'security.Users'
     ],
 
     stores: [
