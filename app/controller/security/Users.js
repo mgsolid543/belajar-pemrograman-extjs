@@ -29,6 +29,9 @@ Ext.define('Movierent.controller.security.Users', {
             },
             "userslist button#add": {
                 click: this.onButtonClickAdd
+            },
+            "userslist button#edit": {
+                click: this.onButtonClickEdit
             }
         });
 
@@ -45,5 +48,22 @@ Ext.define('Movierent.controller.security.Users', {
         var win = Ext.create('Movierent.view.security.Profile');
         win.setTitle('Add new user');
         win.show();
+    },
+
+    onButtonClickEdit: function(button, e, options) {
+        var grid = this.getUsersList();
+        console.log('edit');
+        var record = grid.getSelectionModel().getSelection();
+
+        if (record[0]) {
+            var editWindow = Ext.create('Movierent.view.security.Profile');
+            editWindow.down('form').loadRecord(record[0]);
+            if (record[0].get('picture')) {
+                var img = editWindow.down('image');
+                img.setSrc('resources/profileImages/'+ record[0].get('picture'));
+            }
+            editWindow.setTitle(record[0].get('name'));
+            editWindow.show();
+        }
     }
 });
