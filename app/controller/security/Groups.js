@@ -29,7 +29,20 @@ Ext.define('Movierent.controller.security.Groups', {
     
     init: function (application) {
         this.control({
-
+            "groupslist": {
+                viewready: this.onViewReady
+            }
         });
-    }
+    },
+
+    onViewReady: function (component, options) {
+        component.getStore().load(function(records, operation, success) {
+            if (records.length > 0) {
+                component.getSelectionModel().select(0);
+            }
+        });
+    },
+
+
+
 });
