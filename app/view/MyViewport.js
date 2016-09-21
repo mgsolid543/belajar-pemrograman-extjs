@@ -3,7 +3,7 @@ Ext.define('Movierent.view.MyViewport', {
     alias: 'widget.mainviewport',
 
     requires: [
-        'Ext.layout.container.Border',
+        'Ext.layout.BorderLayout',
         'Movierent.view.Header',
         'Movierent.view.menu.Accordion',
         'Movierent.view.MainPanel'

@@ -1,9 +1,26 @@
 Ext.define('Movierent.controller.security.Users', {
     extend: 'Ext.app.Controller',
 
-    views: [
-        'security.Users'
+    requires: [
+        'Movierent.util.Util'
     ],
+
+    views: [
+        'security.Users',
+        'security.Profile'
+    ],
+
+    stores: [
+        'security.Groups'
+    ],
+
+    refs: [{
+        ref: 'usersList',
+        selector: 'userslist',
+    }, {
+        ref: 'userPicture',
+        selector: 'profile image'
+    }],
     
     init: function (application) {
         this.control({
@@ -11,6 +28,10 @@ Ext.define('Movierent.controller.security.Users', {
                 render: this.onRender
             }
         });
+
+        if (!Ext.getStore('groups')) {
+            Ext.create('Movierent.store.security.Groups');
+        }
     },
 
     onRender: function (component, options) {

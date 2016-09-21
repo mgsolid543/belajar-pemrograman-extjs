@@ -87,12 +87,28 @@
     background-image:url('../icons/key.png') !important;
 }
 
+.key-go {
+    background-image:url('../icons/key_go.png') !important;
+}
+
 .cancel {
     background-image:url('../icons/cancel.png') !important;
 }
 
-.key-go {
-    background-image:url('../icons/key_go.png') !important;
+.save {
+    background-image:url('../icons/disk.png') !important;
+}
+
+.add {
+    background-image:url('../icons/add.png') !important;
+}
+
+.edit {
+    background-image:url('../icons/pencil.png') !important;
+}
+
+.delete {
+    background-image:url('../icons/delete.png') !important;
 }
 
 .logout {

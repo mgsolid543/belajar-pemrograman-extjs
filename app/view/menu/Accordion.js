@@ -4,8 +4,10 @@ Ext.define('Movierent.view.menu.Accordion',{
 
     width: 300,
     layout: {
-        type: 'accordion'
+        type: 'accordion',
+        pack: 'start'
     },
+    multi: true,
     collapsible: false,
     hideCollpaseTool: false,
     iconCls: 'sitemap',

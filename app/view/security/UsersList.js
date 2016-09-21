@@ -22,9 +22,30 @@ Ext.define('Movierent.view.security.UsersList', {
         dataIndex: 'group_id',
         text: 'Group',
         renderer: function (value, metaData, record) {
-            var groupStore = Ext.getStore('groups');
-            var group = groupStore.findRecord('id', value);
+            var groupsStore = Ext.getStore('groups');
+            var group = groupsStore.findRecord('id', value);
             return group != null ? group.get('name') : value;
         }
+    }],
+    dockedItems:  [{
+        xtype: 'toolbar',
+        flex: 1,
+        dock: 'top',
+        items: [{
+            xtype: 'button',
+            text: 'Add',
+            itemId: 'add',
+            iconCls: 'add'
+        }, {
+            xtype: 'button',
+            text: 'Edit',
+            itemId: 'edit',
+            iconCls: 'edit'
+        }, {
+            xtype: 'button',
+            text: 'Delete',
+            itemId: 'delete',
+            iconCls: 'delete'
+        }]
     }]
 });

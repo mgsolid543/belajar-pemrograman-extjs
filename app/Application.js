@@ -1,3 +1,4 @@
+
 Ext.define('Movierent.Application', {
     name: 'Movierent',
 
@@ -9,7 +10,15 @@ Ext.define('Movierent.Application', {
         'Movierent.util.Util',
         'Ext.menu.Menu',
         'Ext.layout.container.Accordion',
-        'Movierent.store.security.Users'
+        'Movierent.store.security.Users',
+        'Movierent.store.security.Permissions',
+        'Ext.form.FieldSet',
+        'Ext.form.field.Hidden',
+        'Ext.form.field.ComboBox',
+        'Ext.form.field.File',
+        'Ext.form.CheckboxGroup',
+        'Ext.form.Panel',
+        'Ext.form.Label'
     ],
 
     views: [
@@ -17,9 +26,11 @@ Ext.define('Movierent.Application', {
     ],
 
     controllers: [
+        'Main',
         'Login',
         'TranslationManager',
         'Menu',
+        'security.Groups',
         'security.Users'
     ],
 

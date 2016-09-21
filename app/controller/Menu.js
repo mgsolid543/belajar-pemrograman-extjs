@@ -1,6 +1,11 @@
 Ext.define('Movierent.controller.Menu', {
     extend: 'Ext.app.Controller',
 
+    requires: [
+        'Movierent.view.security.Profile',
+        'Movierent.view.security.GroupPermissions'
+    ],
+
     models: [
         'menu.Root',
         'menu.Item'
@@ -75,7 +80,7 @@ Ext.define('Movierent.controller.Menu', {
                 render: this.onPanelRender
             },
             "mainmenuitem": {
-                select: this.onTreepanelSelect,
+                // select: this.onTreepanelSelect,
                 itemclick: this.onTreepanelItemclick
             }
         });
