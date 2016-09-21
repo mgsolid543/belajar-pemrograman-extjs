@@ -31,6 +31,9 @@ Ext.define('Movierent.controller.security.Groups', {
         this.control({
             "groupslist": {
                 viewready: this.onViewReady
+            },
+            "groupslist button#add": {
+                click: this.onButtonClickAdd
             }
         });
     },
@@ -43,6 +46,8 @@ Ext.define('Movierent.controller.security.Groups', {
         });
     },
 
-
+    onButtonClickAdd: function (button, e, options) {
+        console.log('click');
+    }
 
 });

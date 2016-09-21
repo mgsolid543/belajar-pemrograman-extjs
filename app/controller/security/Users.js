@@ -26,6 +26,9 @@ Ext.define('Movierent.controller.security.Users', {
         this.control({
             "userslist": {
                 render: this.onRender
+            },
+            "userslist button#add": {
+                click: this.onButtonClickAdd
             }
         });
 
@@ -36,5 +39,11 @@ Ext.define('Movierent.controller.security.Users', {
 
     onRender: function (component, options) {
         component.getStore().load();
+    },
+
+    onButtonClickAdd: function (button, e, options) {
+        var win = Ext.create('Movierent.view.security.Profile');
+        win.setTitle('Add new user');
+        win.show();
     }
 });
