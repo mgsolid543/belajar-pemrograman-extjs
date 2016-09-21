@@ -59,6 +59,7 @@ Ext.define('Movierent.controller.Menu', {
                 return tab.title === record.get('text');
             });
 
+
         if (!newTab) {
             newTab = mainPanel.add({
                 xtype: record.raw.className,
