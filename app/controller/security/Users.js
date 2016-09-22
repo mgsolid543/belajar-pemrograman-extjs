@@ -38,6 +38,9 @@ Ext.define('Movierent.controller.security.Users', {
             },
             "profile button#cancel": {
                 click: this.onButtonClickCancel
+            },
+            "profile button#save": {
+                click: this.onButtonClickSave
             }
         });
         if (!Ext.getStore('groups')) {
@@ -118,5 +121,41 @@ Ext.define('Movierent.controller.security.Users', {
 
     onButtonClickCancel: function (button, e, options) {
         button.up('window').close();
+    },
+    
+    onButtonClickSave: function (button, e, options) {
+        var win = button.up('window');
+        formPanel = win.down('form');
+        store = this.getUsersList().getStore();
+
+        if (formPanel.getForm().isInvalid()) {
+            formPanel.getForm().submit({
+                clientValidation: true,
+                url: 'php/security/saveUser.php',
+                success: function (form, action) {
+                    var result = action.result;
+                    console.log(result);
+                    if (result.success) {
+                        Movierent.util.Alert.msg('Success', 'User saved');
+                        store.load();
+                        win.close();
+                    } else {
+                        Movierent.util.Util.showErrorMsg(result.msg);
+                    }
+                },
+                failure: function (form, action) {
+                    switch (action.failureType) {
+                        case Ext.form.action.Action.CLIENT_INVALID:
+                            Ext.Msg.alert('Failure', 'Form fields may not be submitted with invalid values');
+                            break;
+                        case Ext.form.action.Action.CONNECT_FAILURE:
+                            Ext.Msg.alert('Failure', 'Ajax communication failed');
+                            break;
+                        case Ext.form.action.Action.SERVER_INVALID:
+                            Ext.Msg.alert('Failure', action.result.msg);
+                    }
+                }
+            });
+        }
     }
 });
