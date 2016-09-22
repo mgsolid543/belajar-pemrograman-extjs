@@ -8,6 +8,7 @@ Ext.define('Movierent.store.security.Groups', {
     model: 'Movierent.model.security.Group',
 
     storeId: 'groups',
+    autoLoad: 'true',
 
     proxy: {
         type: 'ajax',
