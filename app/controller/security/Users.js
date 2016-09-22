@@ -68,7 +68,7 @@ Ext.define('Movierent.controller.security.Users', {
             editWindow.down('form').loadRecord(record[0]);
             if (record[0].get('picture')) {
                 var img = editWindow.down('image');
-                img.setSrc('resources/profileImages/'+ record[0].get('picture'));
+                img.setSrc('resources/profileimages/'+ record[0].get('picture'));
             }
             editWindow.setTitle(record[0].get('name'));
             editWindow.show();
@@ -125,10 +125,10 @@ Ext.define('Movierent.controller.security.Users', {
     
     onButtonClickSave: function (button, e, options) {
         var win = button.up('window');
-        formPanel = win.down('form');
+        var formPanel = win.down('form');
         store = this.getUsersList().getStore();
 
-        if (formPanel.getForm().isInvalid()) {
+        if (formPanel.getForm().isValid()) {
             formPanel.getForm().submit({
                 clientValidation: true,
                 url: 'php/security/saveUser.php',

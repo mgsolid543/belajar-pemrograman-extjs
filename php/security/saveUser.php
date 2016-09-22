@@ -8,7 +8,7 @@
     $email = $_POST['email'];
     $group = $_POST['group_id'];
     $password = "e10adc3949ba59abbe56e057f20f883e"; //123456 - default password
-    $uploads_dir = '../../resources/profileImages';
+    $uploads_dir = '../../resources/profileimages';
 
     if ($id == "") $id = 0;
 
@@ -25,7 +25,7 @@
         if ($resultdb = mysqli_query($insertQuery)) {
             $id = $mysqli->insert_id;
         }
-    } else {
+    } else {    // update
         $updateQuery = "update user set ";
         $updateQuery .= "name = '$name', ";
         $updateQuery .= "username = '$username', ";

@@ -53,7 +53,7 @@ Ext.define('Movierent.view.security.Profile', {
             }, {
                 xtype: 'combobox',
                 fieldLabel: 'Group',
-                name: 'Group_id',
+                name: 'group_id',
                 displayField: 'name',
                 valueField: 'id',
                 queryMode: 'local',
