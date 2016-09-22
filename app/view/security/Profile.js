@@ -4,6 +4,7 @@ Ext.define('Movierent.view.security.Profile', {
 
     height: 260,
     width: 550,
+    modal: true,
 
     requires: ['Movierent.util.Util'],
 
@@ -46,7 +47,9 @@ Ext.define('Movierent.view.security.Profile', {
             }, {
                 fieldLabel: 'Email',
                 maxLength: 100,
-                name: 'email'
+                name: 'email',
+                vtype: 'email',
+                msgTarget: 'side'
             }, {
                 xtype: 'combobox',
                 fieldLabel: 'Group',

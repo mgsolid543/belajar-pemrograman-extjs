@@ -81,7 +81,7 @@ Ext.define('Movierent.controller.Menu', {
                 render: this.onPanelRender
             },
             "mainmenuitem": {
-                // select: this.onTreepanelSelect,
+                select: this.onTreepanelSelect,
                 itemclick: this.onTreepanelItemclick
             }
         });

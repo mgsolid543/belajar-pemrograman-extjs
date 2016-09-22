@@ -23,6 +23,11 @@ Ext.define('Movierent.view.security.UsersList', {
         text: 'Group',
         renderer: function (value, metaData, record) {
             var groupsStore = Ext.getStore('groups');
+            if (!Ext.getStore('groups')) {
+                // var groupsStore = Ext.getStore('groups');
+                groupsStore = Ext.create('Movierent.store.security.Groups');
+                groupsStore.load();
+            }
             var group = groupsStore.findRecord('id', value);
             return group != null ? group.get('name') : value;
         }
