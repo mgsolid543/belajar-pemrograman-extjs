@@ -22,7 +22,7 @@
         $insertQuery = "insert into user (name, username, password, email, picture, group_id) ";
         $insertQuery .= "values ('$name', '$username', '$password', '$email', '$filename', '$group')";
 
-        if ($resultdb = mysqli_query($insertQuery)) {
+        if ($resultdb = $mysqli->query($insertQuery)) {
             $id = $mysqli->insert_id;
         }
     } else {    // update
@@ -33,8 +33,8 @@
         if ($filename != null) {
             $updateQuery .= "picture = '$filename', ";
         }
-        $updateQuery = "group_id = '$group', ";
-        $updateQuery = "where id = '$id'";
+        $updateQuery .= "group_id = '$group' ";
+        $updateQuery .= "where id = '$id'";
 
         $resultdb = $mysqli->query($updateQuery);
     }
