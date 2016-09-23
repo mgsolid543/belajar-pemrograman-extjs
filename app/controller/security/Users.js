@@ -41,6 +41,9 @@ Ext.define('Movierent.controller.security.Users', {
             },
             "profile button#save": {
                 click: this.onButtonClickSave
+            },
+            "profile filefield": {
+                change: this.onFilefieldChange
             }
         });
         if (!Ext.getStore('groups')) {
@@ -156,6 +159,21 @@ Ext.define('Movierent.controller.security.Users', {
                     }
                 }
             });
+        }
+    },
+
+    onFilefieldChange: function (filefield, value, options) {
+        var file = filefield.fileInputEl.dom.files[0];
+        var picture = this.getUserPicture();
+        if (typeof FileReader !== "undefined" && (/image/i).test(file.type)) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                picture.setSrc(e.target.result);
+            }
+            reader.readAsDataURL(file);
+        } else if (!(/image/i).test(file.type)) {
+            Ext.Msg.alert('Warning', 'You can only upload image files!');
+            filefield.reset();
         }
     }
 });
