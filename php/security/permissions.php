@@ -14,7 +14,7 @@
             if ($checked = $mysqli->query($queryString)) {
                 $r['checked'] = $checked->num_rows > 0;
             }
-            if ($nodes = $mysqli->query("SELECT * FROM MENU WHERE parent_id = '". $r['id'] ."'")) {
+            if ($nodes = $mysqli->query("select * from menu where parent_id = '". $r['id'] ."'")) {
                 $count = $nodes->num_rows;
                 if ($count > 0) {
                     $r['expanded'] = true;

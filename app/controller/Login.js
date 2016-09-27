@@ -60,8 +60,6 @@ Ext.define('Movierent.controller.Login', {
 
         if (formPanel.getForm().isValid()) {
             pass = Movierent.util.MD5.encode(pass);
-            console.log('User: ' + user);
-            console.log('Pass: ' + pass);
             Ext.get(login.getEl()).mask("Sedang proses otentikasi... Mohon tunggu...", 'loading');
 
             Ext.Ajax.request({
@@ -93,7 +91,6 @@ Ext.define('Movierent.controller.Login', {
     },
 
     onButtonClickCancel: function (button, e, options) {
-        console.log('login cancel');
         // button.up('form').getForm().reset();
         button.up('window').down('form').getForm().reset();
     },
@@ -102,7 +99,6 @@ Ext.define('Movierent.controller.Login', {
         if (e.getKey()==e.ENTER) {
             var submitBtn = field.up('form').down('button#submit');
             submitBtn.fireEvent('click', submitBtn, e, options);
-            console.log(submitBtn);
         }
     },
 

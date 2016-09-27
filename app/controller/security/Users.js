@@ -63,7 +63,6 @@ Ext.define('Movierent.controller.security.Users', {
 
     onButtonClickEdit: function(button, e, options) {
         var grid = this.getUsersList();
-        console.log('edit');
         var record = grid.getSelectionModel().getSelection();
 
         if (record[0]) {

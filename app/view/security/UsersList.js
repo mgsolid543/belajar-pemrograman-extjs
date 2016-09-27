@@ -1,3 +1,4 @@
+//var storeUser = Ext.create('Movierent.store.security.Users');
 Ext.define('Movierent.view.security.UsersList', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.userslist',
@@ -32,7 +33,7 @@ Ext.define('Movierent.view.security.UsersList', {
             return group != null ? group.get('name') : value;
         }
     }],
-    dockedItems:  [{
+    dockedItems: [{
         xtype: 'toolbar',
         flex: 1,
         dock: 'top',

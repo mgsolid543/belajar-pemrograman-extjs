@@ -10,7 +10,7 @@ Ext.define('Movierent.view.security.Groups', {
 
     layout: {
         type: 'hbox',
-        align: 'scretch'
+        align: 'stretch'
     },
 
     items: [{

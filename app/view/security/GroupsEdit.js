@@ -9,8 +9,8 @@ Ext.define('Movierent.view.security.GroupsEdit', {
     ],
 
     layout: {
-        type: 'vbox',
-        align: 'scretch'
+        align: 'stretch',
+        type: 'vbox'
     },
 
     bodyPadding: 10,
@@ -18,7 +18,7 @@ Ext.define('Movierent.view.security.GroupsEdit', {
 
     items: [{
         xtype: 'fieldset',
-        height: 100,
+        height: 50,
         title: 'Group Information',
         defaults: {
             afterLabelTextTpl: Movierent.util.Util.required,
@@ -39,13 +39,13 @@ Ext.define('Movierent.view.security.GroupsEdit', {
         }]
     }, {
         xtype: 'grouppermissions',
-        flex: 2
+        flex: 1
     }, {
         xtype: 'userslist',
         emptyText: 'No users in this group.',
         title: 'Users in this Group',
         hideGroup: true,
-        flex: 1
+        flex: 2
     }],
     dockedItems: [{
         xtype: 'toolbar',
@@ -58,12 +58,12 @@ Ext.define('Movierent.view.security.GroupsEdit', {
         items: [{
             xtype: 'button',
             text: 'Cancel',
-            itemId: 'cancel',
+            itemId: 'cancelgroupedit',
             iconCls: 'cancel'
         }, {
             xtype: 'button',
             text: 'Save',
-            itemId: 'save',
+            itemId: 'savegroupedit',
             iconCls: 'save'
         }]
     }]

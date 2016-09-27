@@ -19,12 +19,12 @@ Ext.define('Movierent.view.security.GroupsList', {
         dock: 'top',
         items: [{
             xtype: 'button',
-            itemId: 'add',
+            itemId: 'addgroup',
             iconCls: 'add',
             text: 'Add'
         }, {
             xtype: 'button',
-            itemId: 'delete',
+            itemId: 'deletegroup',
             iconCls: 'delete',
             text: 'Delete'
         }]
