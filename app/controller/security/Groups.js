@@ -9,8 +9,7 @@ Ext.define('Movierent.controller.security.Groups', {
         'security.Groups',
         'security.GroupsList',
         'security.GroupsEdit',
-        'security.GroupPermissions',
-        'security.FormAddGroup'
+        'security.GroupPermissions'
     ],
 
     stores: [
@@ -49,9 +48,6 @@ Ext.define('Movierent.controller.security.Groups', {
             },
             "groupsedit button#cancelgroupedit": {
                 click: this.onButtonClickCancel
-            },
-            "formaddgroup button#cancelformaddgroup": {
-                click: this.onButtonClickCancelFormAddGroup
             }
         });
     },
@@ -98,18 +94,14 @@ Ext.define('Movierent.controller.security.Groups', {
     },
 
     onButtonClickAdd: function (button, e, options) {
-        var model = Ext.create('Movierent.store.security.Groups', {
+        var model = Ext.create('Movierent.model.security.Group', {
             id: 0,
             name: null
         });
-        // this.getGroupsEdit().getForm().loadRecord(model);
+        this.getGroupsEdit().getForm().loadRecord(model);
         this.getGroupPermissions().getStore().load();
         this.getGroupsEdit().down('userslist').getStore().removeAll();
         this.getGroupsEdit().setDisabled(false);
-
-        var win = Ext.create('Movierent.view.security.FormAddGroup');
-        win.setTitle('Add new group');
-        win.show();
     },
 
     onButtonClickDelete: function (button, e, options) {
@@ -213,13 +205,7 @@ Ext.define('Movierent.controller.security.Groups', {
     },
 
     onButtonClickCancel: function (button, e, options) {
-        console.log('cancel');
+        console.log('cancel coy');
         this.resetForm();
-    },
-
-    onButtonClickCancelFormAddGroup: function (button, e, options) {
-        console.log('cancel addgroup');
-        button.up('window').close();
     }
-
 });
