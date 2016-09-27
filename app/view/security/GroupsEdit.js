@@ -25,7 +25,7 @@ Ext.define('Movierent.view.security.GroupsEdit', {
             anchor: '100%',
             xtype: 'textfield',
             allowBlank: false,
-            msgTarget: 'under'
+            msgTarget: 'side'
         },
         items: [{
             xtype: 'hiddenfield',

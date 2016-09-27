@@ -80,8 +80,8 @@ Ext.define('Movierent.controller.security.Groups', {
     onCheckChange: function (node, checked, options) {
         if (node.isLeaf() && checked) {
             node.parentNode.set('checked', checked);
-        } else {
-            node.cascadeBy(function (n) {
+        } else if (!node.isLeaf()) {
+            node.cascadeBy(function(n){
                 n.set('checked', checked);
             });
         }
@@ -98,6 +98,7 @@ Ext.define('Movierent.controller.security.Groups', {
             id: 0,
             name: null
         });
+
         this.getGroupsEdit().getForm().loadRecord(model);
         this.getGroupPermissions().getStore().load();
         this.getGroupsEdit().down('userslist').getStore().removeAll();
@@ -125,6 +126,22 @@ Ext.define('Movierent.controller.security.Groups', {
                             url: 'php/security/deleteGroup.php',
                             params: {
                                 id: record[0].get('id')
+                            },
+                            success: function(conn, response, options, eOpts) {
+                                var result = Movierent.util.Util.decodeJSON(conn.responseText);
+                                if (result.success) {
+                                    Movierent.util.Alert.msg('Success!','Group deleted.');
+                                    store.load();
+                                    form.reset();
+                                    formPanel.setDisabled(true);
+                                    usersGrid.getStore().removeAll();
+                                    tree.getStore().load();
+                                } else {
+                                    Movierent.util.Util.showErrorMsg(conn.responseText);
+                                }
+                            },
+                            failure: function(conn, response, options, eOpts) {
+                                Movierent.util.Util.showErrorMsg(conn.responseText);
                             }
                         })
                     }
@@ -147,13 +164,25 @@ Ext.define('Movierent.controller.security.Groups', {
         }
     },
 
+    resetForm: function () {
+        var form = this.getGroupsEdit();
+        this.getGroupPermissions().getStore().load();
+        form.down('userslits').getStore().removeAll();
+        form.disable();
+        form.getForm().reset();
+    },
+
+    onButtonClickCancel: function (button, e, options) {
+        this.resetForm();
+    },
+
     onButtonClickSave: function (button, e, options) {
         var store = this.getGroupsList().getStore();
         var formPanel = button.up('form');
         var records = formPanel.down('treepanel').getView().getChecked();
         var names = [];
 
-        Ext.array.each(records, function (rec) {
+        Ext.Array.each(records, function (rec) {
             names.push(rec.get('id'));
         });
 
@@ -194,18 +223,5 @@ Ext.define('Movierent.controller.security.Groups', {
                 });
             }
         }
-    },
-
-    resetForm: function () {
-        var form = this.getGroupsEdit();
-        this.getGroupPermissions().getStore().load();
-        form.down('userlits').getStore().removeAll();
-        form.disable();
-        form.getForm().reset();
-    },
-
-    onButtonClickCancel: function (button, e, options) {
-        console.log('cancel coy');
-        this.resetForm();
     }
 });
