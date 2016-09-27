@@ -8,7 +8,7 @@
         while ($r = $resultdb->fetch_assoc()) {
             $id = $r['id'];
             $queryString = "select menu_id menuId from permissions ";
-            $queryString .= " where group_id = '$groupId' ";
+            $queryString .= " where group_id = '".$_REQUEST['group']."' ";
             $queryString .= " and menu_id = '$id' ";
 
             if ($checked = $mysqli->query($queryString)) {
@@ -22,7 +22,7 @@
                     while ($item = $nodes->fetch_assoc()) {
                         $id = $item['id'];
                         $queryString = "select menu_id menuId from permissions ";
-                        $queryString .= "where group_id = '$groupId' ";
+                        $queryString .= " where group_id = '".$_REQUEST['group']."' ";
                         $queryString .= "and menu_id = '$id'";
                         if ($checked = $mysqli->query($queryString)) {
                             $item['checked'] = $checked->num_rows > 0;

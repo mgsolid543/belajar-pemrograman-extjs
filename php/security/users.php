@@ -6,7 +6,7 @@
     $sql = "select * from user";
 
     if ($groupId) {
-        $sql .= " where group_id = '$groupId'";
+        $sql .= " where group_id = '".$_REQUEST['group']."'";
     }
 
     $result = array();
