@@ -138,3 +138,27 @@
 .menu_users {
     background-image:url('../icons/group_edit.png') !important;
 }
+
+.menu_staticdata {
+    background-image:url('../icons/database_table.png') !important;
+}
+
+.menu_actor {
+    background-image:url('../icons/vcard.png') !important;
+}
+
+.menu_category {
+    background-image:url('../icons/tag_green.png') !important;
+}
+
+.menu_language {
+    background-image:url('../icons/flag_yellow.png') !important;
+}
+
+.menu_city {
+    background-image:url('../icons/briefcase.png') !important;
+}
+
+.menu_country {
+    background-image:url('../icons/world.png') !important;
+}
