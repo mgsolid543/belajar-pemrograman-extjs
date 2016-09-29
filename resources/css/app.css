@@ -162,3 +162,11 @@
 .menu_country {
     background-image:url('../icons/world.png') !important;
 }
+
+
+/**iconCls Action Column */
+.x-action-col-cell img {
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+}
