@@ -1,3 +1,11 @@
+Ext.Loader.setConfig({
+    enabled: true,
+    paths: {
+        Ext: 'ext/src',
+        'Ext.ux': 'ext/src/ux',
+        'Movierent.util': 'app/util'
+    }
+});
 
 Ext.define('Movierent.Application', {
     name: 'Movierent',
