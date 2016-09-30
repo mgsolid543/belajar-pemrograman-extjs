@@ -39,7 +39,9 @@ Ext.define('Movierent.Application', {
         'TranslationManager',
         'Menu',
         'security.Groups',
-        'security.Users'
+        'security.Users',
+        'staticData.AbstractController'
+
     ],
 
     stores: [

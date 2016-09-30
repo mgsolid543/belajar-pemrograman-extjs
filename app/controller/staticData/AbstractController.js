@@ -1,4 +1,4 @@
-Ext.define('Packt.controller.staticData.AbstractController', {
+Ext.define('Movierent.controller.staticData.AbstractController', {
     extend: 'Ext.app.Controller',
 
     requires: [
@@ -16,10 +16,10 @@ Ext.define('Packt.controller.staticData.AbstractController', {
     views: [
         'staticData.AbstractGrid',
         'staticData.Actors',
-        // 'staticData.Categories',
-        // 'staticData.Cities',
-        // 'staticData.Countries',
-        // 'staticData.Languages'
+        'staticData.Categories',
+        'staticData.Cities',
+        'staticData.Countries',
+        'staticData.Languages'
     ],
 
     init: function (application) {
