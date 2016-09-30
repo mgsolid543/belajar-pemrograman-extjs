@@ -13,20 +13,30 @@ Ext.define('Movierent.Application', {
     extend: 'Ext.app.Application',
 
     requires: [
-        'Ext.form.Panel',
-        'Ext.form.Label',
-        'Movierent.util.Util',
         'Ext.menu.Menu',
+        'Ext.form.Panel',
         'Ext.layout.container.Accordion',
-        'Movierent.store.security.Users',
+        'Ext.form.Label',
         'Movierent.store.security.Permissions',
+        'Movierent.store.security.Users',
+        'Movierent.util.Util',
+        'Ext.data.proxy.Ajax',
         'Ext.form.FieldSet',
         'Ext.form.field.Hidden',
         'Ext.form.field.ComboBox',
         'Ext.form.field.File',
-        'Ext.form.CheckboxGroup',
-        'Ext.form.Panel',
-        'Ext.form.Label'
+        'Ext.grid.plugin.CellEditing',
+        'Ext.ux.grid.FiltersFeature',
+        'Ext.grid.column.Date',
+        'Ext.grid.column.Action',
+        // 'Ext.chart.series.Pie',
+        // 'Ext.chart.series.Column',
+        // 'Ext.chart.axis.Numeric',
+        // 'Ext.chart.axis.Category',
+        // 'Movierent.view.film.FilmWindow',
+        'Ext.form.CheckboxGroup'
+        // 'Movierent.view.film.SearchCategory',
+        // 'Movierent.view.film.SearchActor'
     ],
 
     views: [
@@ -41,12 +51,13 @@ Ext.define('Movierent.Application', {
         'security.Groups',
         'security.Users',
         'staticData.AbstractController'
-
     ],
 
     stores: [
-        // TODO: add stores here
+         'security.Permissions'
     ],
+
+    splashscreen: {},
 
     init: function () {
         // splashscreen = Ext.getBody().mask('Sedang memuat aplikasi...', 'splashscreen');

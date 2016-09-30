@@ -163,6 +163,13 @@
     background-image:url('../icons/world.png') !important;
 }
 
+.save_all {
+    background-image:url('../icons/disk_multiple.png') !important;
+}
+
+.clear_filter {
+    background-image:url('../icons/filter_del.gif') !important;
+}
 
 /**iconCls Action Column */
 .x-action-col-cell img {
